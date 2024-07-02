@@ -17,11 +17,13 @@ class DashboardPage extends Page{
     }
 
     //Action
-    async ValidateDashboard(){
-        expect(this.cartIcon).toBeDisplayed()
-    }
     async AddtoCart(){
         await this.AddtoCartButton.click();
+    }
+
+    //Validate
+    async ValidateDashboard(){
+        expect(this.cartIcon).toBeDisplayed();
     }
     async ValidateCart(){
         expect(this.RemovefromCartButton).toBeDisabled();

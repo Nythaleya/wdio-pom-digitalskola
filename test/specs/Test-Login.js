@@ -16,6 +16,24 @@ describe('T1 - Standard User', () => {
     });
 
     it('Remove From Cart', async() => {
-        
+        await cartPage.RemoveFromCart()
+    });
+})
+
+describe('T2 - Visual User', () => {
+    it('Succesfull Login', async () => {
+        await login.open()
+        await login.login('visual_user','secret_sauce')
+        await dashboardPage.ValidateDashboard()
+    })
+
+    it('Add to Cart', async() => {
+        await dashboardPage.AddtoCart()
+        await dashboardPage.ValidateCart()
+        await cartPage.ValidateCart()
+    });
+
+    it('Remove From Cart', async() => {
+        await cartPage.RemoveFromCart()
     });
 })

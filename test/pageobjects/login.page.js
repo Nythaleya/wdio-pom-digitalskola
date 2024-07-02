@@ -6,18 +6,18 @@ class LoginPage extends Page{
         return super.open("")
     }
 
+    //Identifier
     get Username(){
         return $("#user-name")
     }
-
     get Password(){
         return $("#password")
     }
-
     get LoginButton(){
         return $("#login-button")
     }
 
+    //Action
     async login(username,password){
         await this.Username.setValue(username);
         await this.Password.setValue(password);
